@@ -31,6 +31,7 @@ import { PaperDrawer } from '../components/evidence/PaperDrawer';
 import { ContradictionCard } from '../components/comparison/ContradictionCard';
 import { NegativeFindingCard } from '../components/comparison/NegativeFindingCard';
 import { GapCard } from '../components/comparison/GapCard';
+import { DirectionCard } from '../components/analysis/DirectionCard';
 import { ReasoningChain } from '../components/analysis/ReasoningChain';
 import { OpportunityScoreCard } from '../components/analysis/OpportunityScoreCard';
 import { WhyModal } from '../components/analysis/WhyModal';
@@ -413,57 +414,15 @@ export const AnalysisDetailPage: React.FC = () => {
             <strong>Signature Feature — Potential Research Directions:</strong> Evidence-grounded hypotheses generated through explicit reasoning chains from observed contradictions and literature gaps, ranked via transparent Opportunity Scoring.
           </div>
 
-          <div className="space-y-6">
+          <div className="space-y-4">
             {hypotheses.map((h, idx) => (
-              <div key={h.id} className="bg-white border border-slate-200 rounded-xl p-6 shadow-xs space-y-5">
-                {/* Header */}
-                <div className="flex flex-col sm:flex-row sm:items-start justify-between gap-3 border-b border-slate-100 pb-4">
-                  <div>
-                    <div className="flex items-center gap-2 mb-1">
-                      <span className="text-[11px] font-bold text-brand-600 uppercase tracking-wider">
-                        Research Direction 0{idx + 1}
-                      </span>
-                      <span className="px-2 py-0.5 rounded text-[10px] font-bold bg-brand-50 text-brand-700 border border-brand-200">
-                        {h.tier}
-                      </span>
-                    </div>
-                    <h3 className="text-base sm:text-lg font-bold text-slate-900 leading-snug">
-                      {h.research_question}
-                    </h3>
-                  </div>
-
-                  <div className="flex items-center gap-2 self-start sm:self-auto">
-                    <button
-                      onClick={() => handleToggleSave(h.id)}
-                      className={`inline-flex items-center gap-1.5 px-3 py-1.5 rounded text-xs font-semibold border transition-standard ${
-                        h.is_saved
-                          ? 'bg-amber-50 text-amber-700 border-amber-300'
-                          : 'bg-white text-slate-700 border-slate-300 hover:bg-slate-100'
-                      }`}
-                    >
-                      <Bookmark className={`w-3.5 h-3.5 ${h.is_saved ? 'fill-amber-500 text-amber-500' : ''}`} />
-                      <span>{h.is_saved ? 'Saved' : 'Save Direction'}</span>
-                    </button>
-
-                    <button
-                      onClick={() => setWhyModalDirection(h)}
-                      className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-slate-100 hover:bg-slate-200 text-slate-800 rounded text-xs font-semibold border border-slate-200 transition-standard"
-                    >
-                      <HelpCircle className="w-3.5 h-3.5 text-brand-600" />
-                      <span>Why this direction?</span>
-                    </button>
-                  </div>
-                </div>
-
-                {/* Reasoning Chain */}
-                <ReasoningChain direction={h} />
-
-                {/* Opportunity Score Breakdown */}
-                <OpportunityScoreCard
-                  direction={h}
-                  onOpenWhyModal={() => setWhyModalDirection(h)}
-                />
-              </div>
+              <DirectionCard
+                key={h.id}
+                direction={h}
+                index={idx}
+                onToggleSave={handleToggleSave}
+                onOpenWhyModal={setWhyModalDirection}
+              />
             ))}
           </div>
 
