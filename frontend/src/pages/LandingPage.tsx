@@ -66,8 +66,8 @@ export const LandingPage: React.FC = () => {
           Turn past research into the <span className="text-brand-500">next research direction.</span>
         </h1>
 
-        <p className="text-base sm:text-lg text-slate-600 max-w-3xl mx-auto leading-relaxed">
-          Traditional literature search only answers what already exists. ResearchLoop analyzes published biomedical evidence, detects negative findings and contradictions, exposes evidence gaps, and ranks next-step research opportunities.
+        <p className="text-base sm:text-lg text-slate-600 max-w-2xl mx-auto leading-relaxed">
+          Analyze published clinical evidence, extract contradictions and negative results, expose evidence gaps, and prioritize high-impact research directions.
         </p>
 
         <div className="pt-4 flex flex-wrap items-center justify-center gap-3">
@@ -125,13 +125,13 @@ export const LandingPage: React.FC = () => {
             <div className="bg-white p-5 rounded-lg border border-slate-200 space-y-2">
               <div className="flex items-center gap-2 text-xs font-bold text-brand-700 uppercase">
                 <Lightbulb className="w-4 h-4 text-brand-600" />
-                <span>Signature Research Direction:</span>
+                <span>Top Opportunity Direction</span>
               </div>
               <p className="text-sm font-semibold text-slate-900">
-                "Does biomarker status modify response to targeted kinase inhibitors, and can downstream vertical co-inhibition overcome de novo resistance?"
+                "Does biomarker stratification modify TKI efficacy, and can vertical co-inhibition overcome acquired resistance?"
               </p>
-              <div className="text-xs text-slate-500 font-mono pt-1">
-                Formulated from contradiction between Smith et al. (PFS 18.9 mo in Biomarker X+) and Johnson et al. (PFS 3.4 mo null in Biomarker X-).
+              <div className="text-xs text-slate-500 font-mono pt-0.5">
+                Derived from contradictory trial outcomes across stratified patient cohorts.
               </div>
             </div>
           </div>
@@ -139,41 +139,41 @@ export const LandingPage: React.FC = () => {
       </section>
 
       {/* How it works */}
-      <section className="py-16 bg-white border-t border-slate-200">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
-          <div className="text-center space-y-2 max-w-2xl mx-auto">
+      <section className="py-14 bg-white border-t border-slate-200">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
+          <div className="text-center space-y-1 max-w-2xl mx-auto">
             <span className="text-xs font-bold text-brand-600 uppercase tracking-wider">Methodology</span>
             <h2 className="text-2xl sm:text-3xl font-bold text-slate-950">How ResearchLoop Works</h2>
-            <p className="text-xs sm:text-sm text-slate-600">A rigorous multi-step biomedical intelligence pipeline.</p>
+            <p className="text-xs sm:text-sm text-slate-500">Four-stage evidence intelligence pipeline.</p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            <div className="p-5 rounded-lg border border-slate-200 bg-slate-50 space-y-2">
-              <div className="text-xl font-bold text-brand-600 font-mono">01</div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+            <div className="p-4 rounded-lg border border-slate-200 bg-slate-50 space-y-1.5">
+              <div className="text-lg font-bold text-brand-600 font-mono">01</div>
               <h3 className="font-bold text-slate-900 text-sm">Literature Ingestion</h3>
               <p className="text-xs text-slate-600 leading-relaxed">
-                Connects to PubMed and Europe PMC to retrieve relevant peer-reviewed trials and observational studies.
+                Connects to PubMed & Europe PMC to retrieve clinical trials and evidence.
               </p>
             </div>
-            <div className="p-5 rounded-lg border border-slate-200 bg-slate-50 space-y-2">
-              <div className="text-xl font-bold text-brand-600 font-mono">02</div>
+            <div className="p-4 rounded-lg border border-slate-200 bg-slate-50 space-y-1.5">
+              <div className="text-lg font-bold text-brand-600 font-mono">02</div>
               <h3 className="font-bold text-slate-900 text-sm">Evidence Extraction</h3>
               <p className="text-xs text-slate-600 leading-relaxed">
-                Extracts structured parameters including cohort sample size, biomarker stratification, effect sizes, and exact sentence quotes.
+                Structures cohort sizes, biomarker strata, outcomes, and quotes.
               </p>
             </div>
-            <div className="p-5 rounded-lg border border-slate-200 bg-slate-50 space-y-2">
-              <div className="text-xl font-bold text-brand-600 font-mono">03</div>
-              <h3 className="font-bold text-slate-900 text-sm">Gaps & Contradictions</h3>
+            <div className="p-4 rounded-lg border border-slate-200 bg-slate-50 space-y-1.5">
+              <div className="text-lg font-bold text-brand-600 font-mono">03</div>
+              <h3 className="font-bold text-slate-900 text-sm">Contradiction Analysis</h3>
               <p className="text-xs text-slate-600 leading-relaxed">
-                Compares discordant findings across study designs and identifies severe evidence vacuums in published literature.
+                Identifies conflicting study findings and unaddressed evidence gaps.
               </p>
             </div>
-            <div className="p-5 rounded-lg border border-slate-200 bg-slate-50 space-y-2">
-              <div className="text-xl font-bold text-brand-600 font-mono">04</div>
+            <div className="p-4 rounded-lg border border-slate-200 bg-slate-50 space-y-1.5">
+              <div className="text-lg font-bold text-brand-600 font-mono">04</div>
               <h3 className="font-bold text-slate-900 text-sm">Opportunity Ranking</h3>
               <p className="text-xs text-slate-600 leading-relaxed">
-                Formulates transparently scored research directions using weighted Novelty, Gap Severity, Feasibility, and Impact.
+                Scores next directions via Novelty, Gap Severity, Feasibility & Impact.
               </p>
             </div>
           </div>
@@ -181,15 +181,12 @@ export const LandingPage: React.FC = () => {
       </section>
 
       {/* Responsible AI Disclaimer Banner */}
-      <section className="max-w-4xl mx-auto px-4 py-8">
-        <div className="p-4 bg-slate-100 border border-slate-200 rounded-lg text-xs text-slate-600 flex items-start gap-3">
-          <ShieldAlert className="w-5 h-5 text-brand-600 flex-shrink-0 mt-0.5" />
-          <div>
-            <h4 className="font-bold text-slate-800 mb-0.5">Responsible AI & Exploratory Research Disclaimer</h4>
-            <p className="leading-relaxed">
-              ResearchLoop is a scientific hypothesis generation and research exploration tool. AI-generated potential directions are not medical diagnoses, treatment recommendations, or clinical guidelines. All findings require independent validation by qualified investigators.
-            </p>
-          </div>
+      <section className="max-w-4xl mx-auto px-4 py-6">
+        <div className="p-3.5 bg-slate-100 border border-slate-200 rounded-lg text-xs text-slate-600 flex items-center gap-3">
+          <ShieldAlert className="w-4 h-4 text-brand-600 flex-shrink-0" />
+          <p className="leading-normal">
+            <strong>Research Notice:</strong> ResearchLoop generates scientific research directions for discovery support. Findings require experimental validation.
+          </p>
         </div>
       </section>
 
